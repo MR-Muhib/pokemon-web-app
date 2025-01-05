@@ -6,6 +6,7 @@ import PokemonView from "../components/pokemon-details/PokemonView";
 const PokemonDetails = () => {
   const { name } = useParams();
   const { pokemon, fetchPokemon } = usePokemon();
+  // console.log(pokemon);
 
   useEffect(() => {
     if (!pokemon.find((p) => p.name === name)) {

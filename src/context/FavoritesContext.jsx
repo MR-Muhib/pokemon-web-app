@@ -6,7 +6,6 @@ export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(() => {
     // Load favorites from localStorage on initialization
     const storedFavorites = localStorage.getItem("favorites");
-    
 
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });

@@ -3,9 +3,18 @@ import FavoriteButton from "../button/FavoriteButton";
 import PokemonImage from "./pokemon-view-details/PokemonImage";
 import PokemonViewDetails from "./pokemon-view-details/PokemonViewDetails";
 import PokemonTitle from "./pokemon-view-details/PokemonTitle";
+import usePokemon from "../../services/api/getPokemon.js";
 
 const PokemonView = ({ currentPokemon, spriteURL }) => {
-  console.log(currentPokemon);
+  const { pokemon } = usePokemon();
+  // find current Pokemon
+  const foundPokemon = pokemon.find((p) => p.name === currentPokemon.name);
+
+  if (!foundPokemon) {
+    return <h1>No such Pokemon found</h1>;
+  }
+  // console.log(foundPokemon);
+
   return (
     <div className="bg-white w-full h-auto">
       <div className="container mx-auto p-5">
@@ -17,7 +26,7 @@ const PokemonView = ({ currentPokemon, spriteURL }) => {
           <PokemonViewDetails currentPokemon={currentPokemon} />
         </div>
 
-        <FavoriteButton currentPokemon={currentPokemon} />
+        <FavoriteButton currentPokemon={foundPokemon} />
       </div>
     </div>
   );
