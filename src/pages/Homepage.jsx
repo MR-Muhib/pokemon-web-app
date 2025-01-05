@@ -1,5 +1,5 @@
-import Pokemons from "../components/homepage/Pokemons";
-import usePokemon from "../features/getPokemon";
+import Pokemon from "../components/homepage/Pokemon";
+import usePokemon from "../services/api/getPokemon";
 
 const Homepage = () => {
   const fetchPokemon = usePokemon();
@@ -20,10 +20,11 @@ const Homepage = () => {
             const spriteURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
             return (
-              <Pokemons
+              <Pokemon
                 key={pokemon.name}
                 pokemon={pokemon}
                 spriteURL={spriteURL}
+                fetchPokemon={fetchPokemon}
               />
             );
           })}

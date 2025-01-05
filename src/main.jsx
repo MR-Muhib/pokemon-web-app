@@ -7,9 +7,12 @@ import { RouterProvider } from "react-router-dom";
 
 // import router
 import { router } from "./router/Router";
+import { FavoritesProvider } from "./context/FavoritesContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <FavoritesProvider>
+      <RouterProvider router={router} />
+    </FavoritesProvider>
   </StrictMode>
 );
