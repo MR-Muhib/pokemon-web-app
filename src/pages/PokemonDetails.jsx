@@ -27,7 +27,7 @@ const PokemonDetails = () => {
   const spriteURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentPokemon.id}.png`;
 
   return (
-    <div className="px-5 py-2">
+    <div className="px-5 py-2 bg-white">
       <PokemonView currentPokemon={currentPokemon} spriteURL={spriteURL} />
     </div>
   );
