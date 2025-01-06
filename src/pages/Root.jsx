@@ -4,7 +4,7 @@ import Navbar from "../components/navbar/Navbar";
 const Root = () => {
   return (
     <>
-      <div className="sticky top-0 z-20">
+      <div className="sticky top-0 z-20 ">
         <Navbar />
       </div>
 

@@ -14,7 +14,7 @@ export default function Favorites() {
   }
 
   return (
-    <div className="bg-white w-full h-auto">
+    <div className="bg-white w-full h-auto px-5 py-2">
       <div className="container bg-slate-50 mx-auto">
         {/* page title for favorite pokemon */}
         <h1 className="text-center font-semibold text-2xl  p-2 italic text-gray-600 underline ">

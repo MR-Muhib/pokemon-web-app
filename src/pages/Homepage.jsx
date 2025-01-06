@@ -6,7 +6,7 @@ const Homepage = () => {
   const pokemons = filteredData;
 
   return (
-    <div className="w-full bg-gray-100">
+    <div className="w-full bg-gray-100 px-5 py-2">
       <div className="container mx-auto ">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-2 ">
           {pokemons.map((pokemon) => {
