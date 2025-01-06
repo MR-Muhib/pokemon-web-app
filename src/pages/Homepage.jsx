@@ -1,10 +1,9 @@
 import Pokemon from "../components/homepage/Pokemon";
-import usePokemon from "../services/api/getPokemon";
+import { useSearch } from "../context/SearchContext";
 
 const Homepage = () => {
-  const fetchPokemon = usePokemon();
-
-  const pokemons = fetchPokemon.pokemon;
+  const { filteredData } = useSearch(); // call api function
+  const pokemons = filteredData;
 
   return (
     <div className="w-full bg-gray-100">
@@ -24,7 +23,6 @@ const Homepage = () => {
                 key={pokemon.name}
                 pokemon={pokemon}
                 spriteURL={spriteURL}
-                fetchPokemon={fetchPokemon}
               />
             );
           })}

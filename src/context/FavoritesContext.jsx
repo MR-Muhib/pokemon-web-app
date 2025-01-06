@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { createContext, useContext, useState, useEffect } from "react";
 
 const FavoritesContext = createContext();
@@ -30,6 +31,19 @@ export const FavoritesProvider = ({ children }) => {
       {children}
     </FavoritesContext.Provider>
   );
+};
+
+// prop-types
+
+FavoritesContext.propTypes = {
+  favorites: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      id: PropTypes.number,
+    })
+  ),
+  addFavorite: PropTypes.func,
+  removeFavorite: PropTypes.func,
 };
 
 export const useFavorites = () => useContext(FavoritesContext);

@@ -1,38 +1,8 @@
-import { useEffect, useState } from "react";
-import PropTypes from "prop-types";
-import usePokemon from "../../services/api/getPokemon";
+// import PropTypes from "prop-types";
+import { useSearch } from "../../context/SearchContext";
 
 const Search = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-
-
-  // 
-  const { pokemon, loading, error } = usePokemon();
-  console.log(pokemon);
-
-  // Handle input change
-  const handleChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  /* const HandleSearch = (searchValue) => {
-    const value = searchValue.toLowerCase();
-    const newCountries = countries.filter((country) => {
-      const countryName = country.name.common.toLowerCase();
-      return countryName.startsWith(value);
-    });
-    setfilterCountry(newCountries);
-  };
-
-  // Trigger search whenever searchQuery changes
-  useEffect(() => {
-    if (searchQuery) {
-      HandleSearch(searchQuery);
-    } else {
-      setFilterCountry(countries);
-    }
-  }, []); */
-
+  const { handleChange, searchQuery } = useSearch();
   return (
     <label className="input input-bordered flex items-center gap-2 search">
       <input
@@ -56,11 +26,6 @@ const Search = () => {
       </svg>
     </label>
   );
-};
-
-// Prop types for validation
-Search.propTypes = {
-  onSearch: PropTypes.func.isRequired, // Ensuring the parent component passes a function to handle search
 };
 
 export default Search;

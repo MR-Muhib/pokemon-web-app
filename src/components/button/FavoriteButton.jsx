@@ -58,10 +58,10 @@ const FavoriteButton = ({ currentPokemon }) => {
 // prop-types
 
 FavoriteButton.propTypes = {
-  currentPokemon: PropTypes.object.isRequired,
-  favorites: PropTypes.array.isRequired,
-  addFavorite: PropTypes.func.isRequired,
-  removeFavorite: PropTypes.func.isRequired,
+  currentPokemon: PropTypes.object,
+  favorites: PropTypes.array,
+  addFavorite: PropTypes.func,
+  removeFavorite: PropTypes.func,
 };
 
 export default FavoriteButton;
