@@ -4,23 +4,32 @@ import { Link } from "react-router-dom";
 import FavoriteButton from "../button/FavoriteButton";
 
 const Pokemon = ({ pokemon, spriteURL }) => {
-  // console.log(fetchPokemon);
+  // console.log(pokemon);
 
   return (
-    <div className="bg-white p-2 shadow-sm shadow-gray-200 rounded-sm">
-      <img src={spriteURL} alt={pokemon.name} className="mx-auto " />
+    <div className="bg-white p-2 shadow-md shadow-gray-300 rounded-md">
+      <img
+        src={spriteURL}
+        alt={pokemon.name}
+        className="mx-auto w-28 h-28 bg-gray-100 rounded-full p-4 m-4"
+      />
 
-      <h3 className="text-md uppercase font-semibold mb-2 ">{pokemon.name}</h3>
+      <h3 className="uppercase font-semibold mb-4 text-center text-xl text-black ">
+        {pokemon.name}
+      </h3>
 
-      <Link
-        className="text-blue-400 italic hover:underline"
-        to={`/pokemon/${pokemon?.name}`}
-      >
-        View Details...
-      </Link>
+      <div className="flex mx-auto gap-5  items-center justify-around text-center">
+        <div className="w-[50%]">
+          <FavoriteButton currentPokemon={pokemon} />
+        </div>
 
-      {/* dynamic favorite button component */}
-      <FavoriteButton currentPokemon={pokemon} />
+        <Link
+          className="px-2 py-2 w-[50%] rounded-md bg-blue-500 text-white font-semibold text-sm"
+          to={`/pokemon/${pokemon?.name}`}
+        >
+          View Details
+        </Link>
+      </div>
     </div>
   );
 };

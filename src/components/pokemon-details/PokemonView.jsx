@@ -20,7 +20,7 @@ const PokemonView = ({ currentPokemon, spriteURL }) => {
       <div className="container mx-auto p-5">
         <PokemonTitle currentPokemon={currentPokemon} />
 
-        <div className="flex justify-around bg-slate-50 p-5 mt-2 rounded-sm">
+        <div className="md:flex justify-around bg-slate-50 p-5  rounded-sm">
           <PokemonImage spriteURL={spriteURL} currentPokemon={currentPokemon} />
 
           <PokemonViewDetails currentPokemon={currentPokemon} />

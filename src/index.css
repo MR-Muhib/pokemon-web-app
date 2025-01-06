@@ -14,5 +14,5 @@
 }
 
 .search {
-  @apply bg-white shadow-md overflow-hidden rounded-sm md:w-96 w-20 sm:w-44 text-black;
+  @apply bg-white shadow-md overflow-hidden rounded-sm md:w-96  text-black;
 }

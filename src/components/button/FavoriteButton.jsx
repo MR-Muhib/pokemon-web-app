@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 import { useFavorites } from "../../context/FavoritesContext";
 import usePokemon from "../../services/api/Pokemon";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+// import react icons
+import { IoIosHeart } from "react-icons/io";
 
 const FavoriteButton = ({ currentPokemon }) => {
+  const [isFavoriteColor, setIsFavoriteColor] = useState(false);
+
   const { name } = currentPokemon;
   // console.log(currentPokemon);
   const { favorites, addFavorite, removeFavorite } = useFavorites();
@@ -34,6 +39,7 @@ const FavoriteButton = ({ currentPokemon }) => {
   const isFavorite = favorites.some((p) => p.name === currentPokemon.name);
 
   const handleFavoriteClick = () => {
+    setIsFavoriteColor(!isFavoriteColor);
     if (isFavorite) {
       removeFavorite(currentPokemon.name);
     } else {
@@ -41,15 +47,16 @@ const FavoriteButton = ({ currentPokemon }) => {
     }
   };
 
-  // handle dynamic color change
-  const buttonColor = isFavorite
-    ? "bg-red-500 px-2 py-2 text-sm w-full rounded-md text-white font-semibold "
-    : "bg-blue-500 px-2 py-2 text-sm w-full rounded-md text-white font-semibold ";
+  const buttonStyle =
+    "w-full px-2 py-2 text-gray-500 font-semibold border border-gray-400 rounded-md text-sm flex items-center justify-center";
+  const heartColor = isFavorite ? "text-red-500" : "text-gray-500";
 
   return (
-    <div className="flex mx-auto item-center justify-center m-5">
-      <button className={buttonColor} onClick={handleFavoriteClick}>
-        {isFavorite ? "Remove from Favorites" : "Add to Favorites"}
+    <div className="w-full flex">
+      <button className={`${buttonStyle}`} onClick={handleFavoriteClick}>
+        <IoIosHeart className={`w-5 h-5  ${heartColor} mr-2`} />
+
+        {isFavorite ? "Favorited" : "Favorite"}
       </button>
     </div>
   );
