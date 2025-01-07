@@ -7,7 +7,7 @@ const Pokemon = ({ pokemon, spriteURL }) => {
   // console.log(pokemon);
 
   return (
-    <div className="bg-white p-2 shadow-md shadow-gray-300 rounded-md">
+    <div className="bg-white p-2 shadow-sm shadow-gray-300 rounded-md">
       <img
         src={spriteURL}
         alt={pokemon.name}
@@ -24,7 +24,7 @@ const Pokemon = ({ pokemon, spriteURL }) => {
         </div>
 
         <Link
-          className="px-2 py-2 w-[50%] rounded-md bg-blue-500 text-white font-semibold text-sm"
+          className="px-2 py-3 w-[50%] rounded-md bg-blue-500 text-white font-semibold text-sm"
           to={`/pokemon/${pokemon?.name}`}
         >
           View Details

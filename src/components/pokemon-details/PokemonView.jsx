@@ -16,8 +16,8 @@ const PokemonView = ({ currentPokemon, spriteURL }) => {
   // console.log(foundPokemon);
 
   return (
-    <div className="bg-white w-full h-auto p-5">
-      <div className="container mx-auto p-5 rounded-md">
+    <div className=" w-full h-auto ">
+      <div className="container mx-auto  rounded-md">
         <PokemonTitle currentPokemon={currentPokemon} />
 
         <div className="md:flex justify-around bg-slate-50 p-5  rounded-sm">

@@ -48,7 +48,7 @@ const FavoriteButton = ({ currentPokemon }) => {
   };
 
   const buttonStyle =
-    "w-full px-2 py-2 text-gray-500 font-semibold border border-gray-400 rounded-md text-sm flex items-center justify-center";
+    "w-full px-2 py-3 text-gray-500 font-semibold border border-gray-400 rounded-md text-sm flex items-center justify-center";
   const heartColor = isFavorite ? "text-red-500" : "text-gray-500";
 
   return (
